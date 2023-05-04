@@ -1,12 +1,17 @@
 import React from "react";
 
-function Note() {
+function createNote(props) {
+  return <Note key={props.id} title={props.title} note={props.note} />;
+}
+
+function Note(props) {
   return (
     <div className="note">
-      <h1>Title</h1>
-      <p>Note</p>
+      <h1>{props.title}</h1>
+      <p>{props.note}</p>
     </div>
   );
 }
 
 export default Note;
+export { createNote };
